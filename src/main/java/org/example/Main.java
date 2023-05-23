@@ -23,10 +23,11 @@ public class Main {
         searchBox.sendKeys("Nikon");
         searchBox.submit();
         driver.findElement(By.className("a-dropdown-prompt")).click();
-//
 
-//        // Select "Price: High to Low" option and select the second product
+
+        // Select "Price: High to Low" option and select the second product
         driver.findElement(By.xpath("//a[text()='Price: High to Low']")).click();
+        //added waiting time to load the page
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
@@ -34,7 +35,7 @@ public class Main {
         }
         driver.findElement(By.cssSelector("div[data-index='2'] h2 a.a-link-normal")).click();
 
-        // Verify that the product topic contains the text "Nikon D3X"
+        // Verifying the product topic contains the text "Nikon D3X"
         WebElement productTopic = driver.findElement(By.id("productTitle"));
         String productTitle = productTopic.getText();
         //System.out.print(productTitle + "\n");
